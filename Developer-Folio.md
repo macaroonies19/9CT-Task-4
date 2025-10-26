@@ -3,12 +3,10 @@
 ### Identifying a need
 I want to create a Top Down RPG on unity. 
 Brainstorm:
--Dungeon style game
--Defeat enemies to progress
+-Complete puzzles to progress
 -Invetory
 -Collectable items
 -Storyline
--Puzzles
 -Memory (you will need to remember things earlier in the game to solve puzzles and progress)
 
 Need:
@@ -21,15 +19,13 @@ Skill development: To develop the skills in Unity required to create the game, I
 
 ### Requirements Outline
 Inputs:
--Directional keyboard keys for character movement (WASD) and spacebar for jumping.
+-Directional keyboard keys for character movement (WASD).
 -Key to open inventory (E).
--Attack (LMB)
--Interact (RMB)
+-Interact (LMB)
 
 Processing:
 -The program will check for collisions, and calculate the new position of the player when a movement key is detected.
 -The program will open an interactable GUI when the inventory key is detected.
--The program will initiate an attack script based off the weapon equiped when the attack function is detected.
 -The program will run an object specific script to load any puzzles/other interactble when the interact function is detected near an interactable object.
 
 Outputs:
