@@ -311,3 +311,8 @@ Scene storyboard 2:
 
 Whole game storyboard:
 ![storyboard3](https://github.com/macaroonies19/9CT-Task-4/blob/main/story%20board%20flowchart.png)
+
+## Researching and Planning: Gantt Chart
+Time and action Gantt chart:
+
+![ganttchart](https://github.com/macaroonies19/9CT-Task-4/blob/main/gantt%20chart.png)
