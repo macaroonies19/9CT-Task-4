@@ -138,21 +138,165 @@ A flowchart and pseudocode for all functional requirements of my game:
 
 ### Movement function flowchart and pseudocode:
 ![movement](https://github.com/macaroonies19/9CT-Task-4/blob/main/movement%20flowchart.png)
+## 1. Movement System
+```pseudocode
+FUNCTION HandleMovement()
+    IF KeyPressed(W) THEN
+        MovePlayer(FORWARD)
+    END IF
+    
+    IF KeyPressed(S) THEN
+        MovePlayer(BACKWARD)
+    END IF
+    
+    IF KeyPressed(A) THEN
+        MovePlayer(LEFT)
+    END IF
+    
+    IF KeyPressed(D) THEN
+        MovePlayer(RIGHT)
+    END IF
+END FUNCTION
+```
 
 ### Interaction function flowchart and pseudocode:
 ![interaction](https://github.com/macaroonies19/9CT-Task-4/blob/main/interaction%20flowchart.png)
+## 2. Interaction System
+```pseudocode
+FUNCTION HandleInteractions()
+    IF KeyPressed(E) THEN
+        targetObject = GetObjectInRange()
+        IF targetObject != NULL THEN
+            SWITCH targetObject.Type OF
+                CASE NPC:
+                    StartDialogue(targetObject)
+                CASE ITEM:
+                    CollectItem(targetObject)
+                CASE PUZZLE:
+                    ActivatePuzzle(targetObject)
+            END SWITCH
+        END IF
+    END IF
+END FUNCTION
+```
 
 ### Menu/UI function flowchart and pseudocode:
 ![menu/UI](https://github.com/macaroonies19/9CT-Task-4/blob/main/menu_UI%20flowchart.png)
+## 3. Menu/UI System
+```pseudocode
+FUNCTION HandleMenuUI()
+    IF KeyPressed(ESC) THEN
+        SWITCH CurrentMenu OF
+            CASE NONE:
+                OpenMainMenu()
+            CASE MAIN:
+                CloseMenu()
+            CASE INVENTORY:
+                OpenMainMenu()
+            CASE SETTINGS:
+                OpenMainMenu()
+        END SWITCH
+    END IF
+    
+    IF KeyPressed(I) AND CurrentMenu == NONE THEN
+        OpenInventory()
+    END IF
+END FUNCTION
+```
 
 ### Healthbars and quest updation function flowchart and pseudocode:
 ![healthbars/quests](https://github.com/macaroonies19/9CT-Task-4/blob/main/healthbar_quest%20flowchart.png)
+## 4. Healthbars and Quest Updates
+```pseudocode
+FUNCTION UpdateHealthbars()
+    // Health System
+    IF PlayerHealthChanged THEN
+        UpdateHealthBar(Player.CurrentHealth / Player.MaxHealth)
+    END IF
+    
+    IF EnemyHealthChanged THEN
+        UpdateEnemyHealthBar(Enemy.CurrentHealth / Enemy.MaxHealth)
+    END IF
+    
+    // Quest System
+    IF QuestObjectiveCompleted THEN
+        UpdateQuestLog(Quest)
+        ShowQuestUpdate(Quest)
+    END IF
+END FUNCTION
+```
 
 ### Dialogue dictating choices function flowchart and pseudocode:
 ![dialogue/choices](https://github.com/macaroonies19/9CT-Task-4/blob/main/dialogue_choices%20flowchart.png)
+## 5. Dialogue Choice System
+```pseudocode
+FUNCTION HandleDialogueChoices()
+    currentDialogue = GetCurrentDialogue()
+    DisplayDialogue(currentDialogue.Text)
+    
+    FOR EACH choice IN currentDialogue.Choices DO
+        IF IsChoiceAvailable(choice) THEN
+            DisplayChoice(choice.Text)
+        END IF
+    END FOR
+    
+    IF PlayerSelectedChoice THEN
+        selectedChoice = GetSelectedChoice()
+        ExecuteChoiceEffects(selectedChoice)
+        UpdateGameState(selectedChoice)
+        LoadNextDialogue(selectedChoice.NextNode)
+    END IF
+END FUNCTION
+```
 
 ### Combat function flowchart and pseudocode:
 ![combat](https://github.com/macaroonies19/9CT-Task-4/blob/main/combat%20flowchart.png)
+## 6. Combat System
+```pseudocode
+FUNCTION HandleCombat()
+    // Player Attack
+    IF MouseClicked(LEFT_BUTTON) THEN
+        IF IsEnemyInAttackRange() THEN
+            DealDamage(Player.Damage)
+            PlayAttackAnimation()
+        END IF
+    END IF
+    
+    // Enemy Attack
+    IF Enemy.IsAttacking THEN
+        IF PlayerInEnemyRange() THEN
+            DealDamageToPlayer(Enemy.Damage)
+            UpdatePlayerHealthBar()
+        END IF
+    END IF
+    
+    // Death Check
+    IF Player.Health <= 0 THEN
+        PlayerDie()
+    END IF
+    
+    IF Enemy.Health <= 0 THEN
+        EnemyDie()
+        GrantExperience()
+    END IF
+END FUNCTION
+```
 
 ### Area accessability function flowchart and pseudocode:
 ![area_unlocking](https://github.com/macaroonies19/9CT-Task-4/blob/main/locked_areas%20flowchart.png)
+## 7. Locked Areas System
+```pseudocode
+FUNCTION CheckAreaAccess()
+    IF PlayerApproachingLockedArea THEN
+        requiredQuest = Area.RequiredQuest
+        IF IsQuestCompleted(requiredQuest) THEN
+            UnlockArea(Area)
+            ShowMessage("Area Unlocked")
+            AllowAccess(Area)
+        ELSE
+            ShowMessage("Area Locked - Complete " + requiredQuest.Name)
+            BlockAccess(Area)
+        END IF
+    END IF
+END FUNCTION
+```
