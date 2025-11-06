@@ -136,10 +136,23 @@ Cultural Sensitivities:
 ## Researching and Planning: Flowchart and Pseudocode Example
 A flowchart and pseudocode for all functional requirements of my game:
 
-![movement]()
-![interaction]()
-![menu/UI]()
-![healthbars/quests]()
-![dialogue/choices]()
-![combat]()
-![area_unlocking]()
+### Movement function flowchart and pseudocode:
+![movement](https://github.com/macaroonies19/9CT-Task-4/blob/main/movement%20flowchart.png)
+
+### Interaction function flowchart and pseudocode:
+![interaction](https://github.com/macaroonies19/9CT-Task-4/blob/main/interaction%20flowchart.png)
+
+### Menu/UI function flowchart and pseudocode:
+![menu/UI](https://github.com/macaroonies19/9CT-Task-4/blob/main/menu_UI%20flowchart.png)
+
+### Healthbars and quest updation function flowchart and pseudocode:
+![healthbars/quests](https://github.com/macaroonies19/9CT-Task-4/blob/main/healthbar_quest%20flowchart.png)
+
+### Dialogue dictating choices function flowchart and pseudocode:
+![dialogue/choices](https://github.com/macaroonies19/9CT-Task-4/blob/main/dialogue_choices%20flowchart.png)
+
+### Combat function flowchart and pseudocode:
+![combat](https://github.com/macaroonies19/9CT-Task-4/blob/main/combat%20flowchart.png)
+
+### Area accessability function flowchart and pseudocode:
+![area_unlocking](https://github.com/macaroonies19/9CT-Task-4/blob/main/locked_areas%20flowchart.png)
