@@ -300,3 +300,14 @@ FUNCTION CheckAreaAccess()
     END IF
 END FUNCTION
 ```
+## Researching and Planning: Storyboards
+3 story boards: 2 with the game/simulation storyboard template, and one of the 'whole game' storyboard:
+
+Scene storyboard 1:
+![storyboard1](https://github.com/macaroonies19/9CT-Task-4/blob/main/storyboard1.jpg)
+
+Scene storyboard 2:
+![storyboard2](https://github.com/macaroonies19/9CT-Task-4/blob/main/storyboard2.jpg)
+
+Whole game storyboard:
+![storyboard3](https://github.com/macaroonies19/9CT-Task-4/blob/main/story%20board%20flowchart.png)
