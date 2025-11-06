@@ -136,6 +136,10 @@ Cultural Sensitivities:
 ## Researching and Planning: Flowchart and Pseudocode Example
 A flowchart and pseudocode for all functional requirements of my game:
 
-
-
-
+![movement]()
+![interaction]()
+![menu/UI]()
+![healthbars/quests]()
+![dialogue/choices]()
+![combat]()
+![area_unlocking]()
